@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // formbuilder  is for making reactive forms
-import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -38,12 +38,12 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.userForm = this.formBuilder.group({
+    this.userForm = this.formBuilder.group({
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       zipcode: ['', [Validators.required, Validators.pattern('^[0-9]{5}(?:-[0-9]{4})?$')]],
-      password: ['', [Validators.required, Validators.minLength(5), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
 
