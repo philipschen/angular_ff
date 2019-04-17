@@ -41,7 +41,21 @@ var registerSchema = new Schema({
         type: String,
         required: true
     },
-    img: { data: Buffer, contentType: String }
+    img: { data: Buffer, contentType: String },
+    item: {
+        "itemname": {
+            type: String,
+            required: true
+        },
+        "veg": {
+            type: Boolean,
+            default: false
+        },
+        "price": {
+            type: String,
+            required: true
+        }
+    }
 
 });
 var kitchens = mongoose.model('kitchens', registerSchema);
