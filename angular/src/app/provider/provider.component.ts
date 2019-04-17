@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from '../register.service';
+import { providerModel } from '../models/providerModel';
 
 @Component({
   selector: 'app-provider',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProviderComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private registerservice: RegisterService) { }
+  
   ngOnInit() {
+    var x: providerModel = {
+      service_provider_name: "tim1",
+      Email: "tim@gmail.com",
+      password: "blah1",
+      reenter_password: "blah1",
+    }
+    this.registerservice.addprovider(x).subscribe(val => console.log(val))
   }
 
 }
