@@ -18,9 +18,21 @@ var registerSchema = new Schema({
     reenter_password: {
         type: String,
         required: true
-    }
+    },
+    question1: {
+        type: String,
+        required: true
+    },
+    question2: {
+        type: String,
+        require: true
+    },
+    question3: {
+        type: String,
+        required: true
+    },
 
 });
-var register_pro = mongoose.model('register_pro', registerSchema);
+var register_cons = mongoose.model('register_cons', registerSchema);
 
-module.exports = register_pro;
+module.exports = register_cons;
