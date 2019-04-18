@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProviderComponent} from './provider/provider.component';
+import { RegisterProdComponent} from './register-prod/register-prod.component';
 const routes: Routes = [
-  { path: 'prov', component: ProviderComponent },
+  { path: 'prov', component: RegisterProdComponent },
 ];
 
 @NgModule({
