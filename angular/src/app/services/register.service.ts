@@ -35,12 +35,17 @@ export class RegisterService {
     return this.http.post<providerModel>(endpoint, JSON.stringify(provider), httpOptions)
     .pipe(
       catchError(this.handleError('addHero', provider))
+      );
+  }
+  getprovider(): Observable<any[]> {
+    console.log(this.http.get<providerModel[]>(endpoint)
+    .pipe(
+      catchError(this.handleError('getHero', []))
+    ));
+    return this.http.get<providerModel[]>(endpoint)
+    .pipe(
+      catchError(this.handleError('getHero', []))
     );
-    // return this.http.post<any>(endpoint + 'provider', JSON.stringify(provider), httpOptions).pipe(
-    //   // tslint:disable-next-line:no-shadowed-variable
-    //   tap((provider) => console.log(`added provider w/ id=${provider.id}`)),
-    //   catchError(this.handleError<any>('addprovider'))
-    // );
   }
 /*
   // updateProduct(id, product): Observable<any> {

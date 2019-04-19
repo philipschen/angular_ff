@@ -18,24 +18,18 @@ export class RegisterProdComponent implements OnInit {
   submitted = false;
   userForm: FormGroup;
 
+  service_provider_name = ""
+  email = ""
+  password = ""
+  confirm_password = ""
   ngOnInit() {
     // Form
     this.userForm = this.formBuilder.group({
-      first_name: ['', Validators.required],
-      last_name: ['', Validators.required],
+      username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      zipcode: ['', [Validators.required, Validators.pattern('^[0-9]{5}(?:-[0-9]{4})?$')]],
       password: ['', [Validators.required, Validators.minLength(5)]],
+      confirm_password: ['', [Validators.required, Validators.minLength(5)]],
     });
-
-    // HTTP request
-    var x: providerModel = {
-      service_provider_name: "tim1",
-      Email: "tim@gmail.com",
-      password: "blah1",
-      reenter_password: "blah1",
-    }
-    this.registerservice.addprovider(x).subscribe(val => console.log(val))
   }
 
   onSubmit() {
@@ -44,28 +38,32 @@ export class RegisterProdComponent implements OnInit {
     if (this.userForm.invalid === true) {
       return;
     } else {
+          // HTTP request
+      var x: providerModel = {
+        service_provider_name: this.service_provider_name,
+        Email: this.email,
+        password: this.password,
+        reenter_password: this.confirm_password,
+      }
+      this.registerservice.addprovider(x).subscribe(val => console.log(val))
       this.registered = true;
     }
   }
 
-  invalidFirstName() {
-    return (this.submitted && this.userForm.controls.first_name.errors != null);
-  }
-
-  invalidLastName() {
-    return (this.submitted && this.userForm.controls.last_name.errors != null);
+  invalidUserName() {
+    return (this.submitted && this.userForm.controls.username.errors != null);
   }
 
   invalidEmail() {
     return (this.submitted && this.userForm.controls.email.errors != null);
   }
 
-  invalidZipcode() {
-    return (this.submitted && this.userForm.controls.zipcode.errors != null);
-  }
-
   invalidPassword() {
     return (this.submitted && this.userForm.controls.password.errors != null);
+  }
+
+  invalidConfirmPassword() {
+    return (this.submitted && this.userForm.controls.confirm_password.errors != null);
   }
 
 }
