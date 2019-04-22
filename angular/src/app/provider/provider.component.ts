@@ -8,7 +8,7 @@ import { providerModel } from '../models/providerModel';
   styleUrls: ['./provider.component.css']
 })
 export class ProviderComponent implements OnInit {
-
+  input1 = []
   constructor(private registerservice: RegisterService) { }
   
   ngOnInit() {
@@ -18,7 +18,8 @@ export class ProviderComponent implements OnInit {
       password: "blah1",
       reenter_password: "blah1",
     }
-    this.registerservice.addprovider(x).subscribe(val => console.log(val))
+    // this.registerservice.addprovider(x).subscribe(val => console.log(val))
+    console.log(this.registerservice.getprovider().subscribe(val => console.log(val))); 
   }
 
 }

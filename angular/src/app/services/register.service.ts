@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { providerModel } from '../models/providerModel';
+import { kitchenModel } from '../models/kitchenModel';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ import { providerModel } from '../models/providerModel';
 export class RegisterService {
 
   constructor(private http: HttpClient) { }
+
   private extractData(res: Response) {
     const body = res;
     return body || {};

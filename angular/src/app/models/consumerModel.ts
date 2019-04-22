@@ -1,4 +1,4 @@
-export class providerModel {
+export class consModel {
     service_provider_name: String;
     Email: String;
     password: String;
