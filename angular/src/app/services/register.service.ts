@@ -11,6 +11,7 @@ import { kitchenModel } from '../models/kitchenModel';
 export class RegisterService {
 
   constructor(private http: HttpClient) { }
+  
   private extractData(res: Response) {
     const body = res;
     return body || {};

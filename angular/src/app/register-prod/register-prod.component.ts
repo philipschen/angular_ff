@@ -19,11 +19,11 @@ export class RegisterProdComponent implements OnInit {
   submitted = false;
   userForm: FormGroup;
 
-
   service_provider_name = ""
   email = ""
   password = ""
   confirm_password = ""
+  
   ngOnInit() {
     // Form
     this.userForm = this.formBuilder.group({
