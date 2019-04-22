@@ -1,0 +1,43 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+  <label for="starttime">Enter Kitchen Open Time:</label>
+  <input type="time" id="starttime" name="starttime" formControlName='starttime' [(ngModel)]='starttime' required>
+  <br><br>
+  <label for="endtime">Enter Kitchen Close Time:</label>
+  <input type="time" id="endtime" name="endtime" formControlName='endtime' [(ngModel)]='endtime' required>
+  <div>
+		<input type="checkbox" formControlName='Monday' class="form-control" [(ngModel)]='Monday'>Monday
+  </div>
+  <div>
+    <input type="checkbox" formControlName='Tuesday' class="form-control" [(ngModel)]='Tuesday'>Tuesday
+  </div>
+  <div>
+       <input type="checkbox" formControlName='Wednesday' class="form-control" [(ngModel)]='Wednesday'>Wednesday
+  </div>
+  <div>
+    <input type="checkbox" formControlName='Thursday' class="form-control" [(ngModel)]='Thursday'>Thursday
+  </div>
+  <div>
+    <input type="checkbox" formControlName='Friday' class="form-control" [(ngModel)]='Friday'>Friday
+  </div>
+  <div>
+    <input type="checkbox" formControlName='Saturday' class="form-control" [(ngModel)]='Saturday'>Saturday
+  </div>
+  <div>
+    <input type="checkbox" formControlName='Sunday' class="form-control" [(ngModel)]='Sunday'>Sunday
+  </div>
+<br>
+  <div class="form-group has-error"> <!-- Register Button -->
+		<button type="submit" class="btn btn-primary">Register Now</button>
+  </div>
+<br>
+<nav>
+	<div style ="text-align: center">
+	  <a routerLink="/feastfreedom"><button class="btn btn-success" >Cancel</button></a>
+	</div>
+	</nav>
+<router-outlet></router-outlet>
+</form>
+
+{{Monday}} {{Tuesday}} {{Wednesday}} {{Thursday}} {{Friday}} {{Saturday}} {{Sunday}}
+{{starttime}} {{endtime}}

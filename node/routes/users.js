@@ -26,11 +26,24 @@ router.post('/register_cons', function (req, res, next) {
 
 //get 
 router.get('/register_pro', function (req, res, next) {
-  res.json('good sh1t');
+  register_pro.find(req.body, function(err, Register_pro){
+    if(err) return next(err)
+    res.json(Register_pro)
+  })
+});
+
+router.get('/register_pro/:id', function (req, res, next) {
+  register_pro.findById(req.params.id,req.body, function(err, Register_pro){
+    if(err) return next(err)
+    res.json(Register_pro)
+  })
 });
 
 router.get('/register_cons', function (req, res, next) {
-  res.json('good sh1t too');
+  register_cons.find(req.body, function(err, Register_cons){
+    if(err) return next(err)
+    res.json(Register_cons)
+  })
 });
 
 

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { providerModel } from '../models/providerModel';
+import { kitchenModel } from '../models/kitchenModel';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,6 @@ export class RegisterService {
 */
   addprovider(provider): Observable<any> {
     console.log(provider);
-    console.log(JSON.stringify(provider))
     console.log(this.http.post<providerModel>(endpoint, JSON.stringify(provider), httpOptions)
     .pipe(
       catchError(this.handleError('addHero', provider))
@@ -37,11 +37,26 @@ export class RegisterService {
       catchError(this.handleError('addHero', provider))
       );
   }
+
+  addprovider_kit(kitchen): Observable<any> {
+    console.log(kitchen);
+    console.log(JSON.stringify(kitchen))
+    console.log(this.http.post<kitchenModel>(endpoint_kit, JSON.stringify(kitchen), httpOptions)
+    .pipe(
+      catchError(this.handleError('addHero', kitchen))
+    ));
+    return this.http.post<kitchenModel>(endpoint_kit, JSON.stringify(kitchen), httpOptions)
+    .pipe(
+      catchError(this.handleError('addHero', kitchen))
+      );
+  }
+
   getprovider(): Observable<any[]> {
     console.log(this.http.get<providerModel[]>(endpoint)
     .pipe(
       catchError(this.handleError('getHero', []))
     ));
+    
     return this.http.get<providerModel[]>(endpoint)
     .pipe(
       catchError(this.handleError('getHero', []))
@@ -74,6 +89,7 @@ export class RegisterService {
   }
 }
 const endpoint = 'http://localhost:5000/users/register_pro'
+const endpoint_kit = 'http://localhost:5000/kitchen'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'

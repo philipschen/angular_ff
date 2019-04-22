@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { RegisterService } from '../services/register.service';
 import { providerModel } from '../models/providerModel';
@@ -12,11 +13,12 @@ import { providerModel } from '../models/providerModel';
 })
 export class RegisterProdComponent implements OnInit {
 
-  constructor(private registerservice: RegisterService, private formBuilder: FormBuilder) { }
+  constructor(private registerservice: RegisterService, private formBuilder: FormBuilder, private router: Router) { }
   
   registered = false;
   submitted = false;
   userForm: FormGroup;
+
 
   service_provider_name = ""
   email = ""
@@ -45,7 +47,9 @@ export class RegisterProdComponent implements OnInit {
         password: this.password,
         reenter_password: this.confirm_password,
       }
-      this.registerservice.addprovider(x).subscribe(val => console.log(val))
+      this.registerservice.addprovider(x).subscribe(val => {console.log(val)
+        this.router.navigate(['/prov2'])})
+      
       this.registered = true;
     }
   }
