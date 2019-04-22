@@ -3,22 +3,28 @@ var router = express.Router();
 const kitchens = require('../models/kitchen');
 const { ensureAuthenticated } = require('../helpers/auth');
 const mongoose = require('mongoose');
+const users = require('../routes/users');
+
 require('../models/kitchen');
 const Kitchen = mongoose.model('kitchens');
 
 /* GET home page. */
-// router.get('/api/kitchen', function (req, res, next) {
-//   Kitchen.find(function (err, kitchens) {
-//     if (err)
-//       res.send(err)
+router.get('/api/kitchen', function (req, res, next) {
+  Kitchen.find(function (err, kitchens) {
+    if (err)
+      res.send(err)
 
-//     res.json(kitchens);
-//   });
-// });
-//post new kitchen (should be update)
+    res.json(kitchens);
+  });
+});
+// post new kitchen (should be update)
 router.post('/api/kitchen', function (req, res, next) {
   kitchens.create(req.body, function (err, kitchen) {
     if (err) return next(err);
+    // users.register_pro.findbyId(users.objectId, function (req, res) {
+    req.body.provider_id = "users.userid";
+    console.log(req.body.provider_id);
+    // })
     res.json(kitchen)
   })
 });
@@ -39,6 +45,14 @@ router.delete('/api/kitchen/:kitchen_id', function (req, res) {
 });
 
 // edit
+
+router.put('/api/kitchen/:id', function (req, res, next) {
+  Kitchen.findByIdAndUpdate(req.params.id, req.body, function (err, kitchens) {
+    if (err) return next(err)
+    res.json(kitchens)
+  })
+});
+module.e
 // router.put('/api/kitchen/:kitchen_id',(req,res){
 //   const requestId = req.params.kitchen_id;
 
@@ -87,30 +101,30 @@ router.delete('/api/kitchen/:kitchen_id', function (req, res) {
 // });
 
 //edit kitchen
-router.put('/:id', (req, res) => {
-  Kitchen.findOne({
-    _id: req.params.id
-  })
-    .then(kitchen => {
-      // new values
-      kitchen.workingdays = req.body.workingdays;
-      kitchen.starttime = req.body.starttime;
-      kitchen.endtime = req.body.endtime;
-      kitchen.item = req.body.item;
-      idea.save()
-        .then(kitchen => {
-          res.redirect('/kitchens');
-        })
-    });
-});
+// router.put('/:id', (req, res) => {
+//   Kitchen.findOne({
+//     _id: req.params.id
+//   })
+//     .then(kitchen => {
+//       // new values
+//       kitchen.workingdays = req.body.workingdays;
+//       kitchen.starttime = req.body.starttime;
+//       kitchen.endtime = req.body.endtime;
+//       kitchen.item = req.body.item;
+//       idea.save()
+//         .then(kitchen => {
+//           res.redirect('/kitchens');
+//         })
+//     });
+// });
 
-// Delete Idea
-router.delete('/:id', (req, res) => {
-  Kitchen.remove({ _id: req.params.id })
-    .then(() => {
-      res.redirect('/kitchens');
-    });
-});
+// // Delete Idea
+// router.delete('/:id', (req, res) => {
+//   Kitchen.remove({ _id: req.params.id })
+//     .then(() => {
+//       res.redirect('/kitchens');
+//     });
+// });
 
 
 module.exports = router;

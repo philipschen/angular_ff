@@ -55,8 +55,10 @@ var registerSchema = new Schema({
             type: String,
             required: true
         }
+    },
+    provider_id: {
+        type: String
     }
-
 });
 var kitchens = mongoose.model('kitchens', registerSchema);
 

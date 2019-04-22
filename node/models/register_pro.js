@@ -18,7 +18,8 @@ var registerSchema = new Schema({
     reenter_password: {
         type: String,
         required: true
-    }
+    },
+
 
 });
 var register_pro = mongoose.model('register_pro', registerSchema);

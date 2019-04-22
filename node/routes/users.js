@@ -12,8 +12,13 @@ router.use(bodyparser.json());
 router.post('/register_pro', function (req, res, next) {
   register_pro.create(req.body, function (err, Register_pro) {
     if (err) return next(err);
+
+    // var something = { "userid": req.params.id };
+
+
+    console.log(req.params.id);
     res.json(Register_pro)
-  })
+  });
 });
 
 //post new consumers
@@ -26,26 +31,32 @@ router.post('/register_cons', function (req, res, next) {
 
 //get 
 router.get('/register_pro', function (req, res, next) {
-  register_pro.find(req.body, function(err, Register_pro){
-    if(err) return next(err)
+  register_pro.find(req.body, function (err, Register_pro) {
+    if (err) return next(err)
     res.json(Register_pro)
   })
 });
 
 router.get('/register_pro/:id', function (req, res, next) {
-  register_pro.findById(req.params.id,req.body, function(err, Register_pro){
-    if(err) return next(err)
+  register_pro.findById(req.params.id, req.body, function (err, Register_pro) {
+    if (err) return next(err)
     res.json(Register_pro)
   })
 });
 
 router.get('/register_cons', function (req, res, next) {
-  register_cons.find(req.body, function(err, Register_cons){
-    if(err) return next(err)
+  register_cons.find(req.body, function (err, Register_cons) {
+    if (err) return next(err)
     res.json(Register_cons)
   })
 });
 
+//test
 
-
+router.put('/register_pro/:id', function (req, res, next) {
+  register_pro.findByIdAndUpdate(req.params.id, req.body, function (err, Register_pro) {
+    if (err) return next(err)
+    res.json(Register_pro)
+  })
+});
 module.exports = router;
