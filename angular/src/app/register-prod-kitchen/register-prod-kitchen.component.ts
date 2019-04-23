@@ -66,13 +66,15 @@ export class RegisterProdKitchenComponent implements OnInit {
         },
         starttime: this.starttime,
         endtime: this.endtime,
-        item: {"itemname": "this",
+        item: [{"itemname": "this",
           "veg": false,
           "price": "2",
-        }
+        }]
       }
-      this.registerservice.addprovider_kit(x).subscribe(val => {console.log(val)
-        this.router.navigate(['/'])})
+      this.session.set("kitchen", x)
+      this.router.navigate(['/prov3'])
+    //   this.registerservice.addprovider_kit(x).subscribe(val => {console.log(val)
+    //     this.router.navigate(['/prov3'])})
       this.registered = true;
     }
   }

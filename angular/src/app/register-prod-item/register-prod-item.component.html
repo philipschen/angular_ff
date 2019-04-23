@@ -1,0 +1,31 @@
+<form novalidate name="form" [formGroup]="userForm">
+  <div formArrayName="items" *ngFor="let item of userForm.get('items')['controls']; let i = index;">
+       <div [formGroupName]="i">
+      <div class="horizontal-line margin-18" *ngIf="i!=0"></div>
+      <div id="headerbtn">
+      </div>
+      <div class="row margin-10 ">
+        <label>Item Name</label>
+        <input formControlName="itemname" />
+        <span *ngIf=" submitted && userForm.controls.items.controls[i].controls.itemname.errors"></span>
+      </div>
+      <div class="row margin-10">
+        <label>Vegetable</label>
+        <div>
+          <label class="form-check-label-custom">
+            <input type="checkbox" formControlName='veg' class="form-control" [(ngModel)]='veg' /> 
+          </label>
+        </div>
+      </div>
+      <div class="row margin-10 ">
+          <label>Price</label>
+          <input formControlName="price" />
+          <span *ngIf=" submitted && userForm.controls.items.controls[i].controls.price.errors"></span>
+      </div>
+    </div>
+  </div>
+  
+  <button type="button" *ngIf="isAddPage" class="btn btn-psd" (click)="addEmptyFormItem()">Add more</button>
+  <br>
+  <button type="button" *ngIf="isAddPage" class="btn btn-psd" (click)="onSubmit()" (ngSubmit)="onSubmit()">Register</button>
+</form>

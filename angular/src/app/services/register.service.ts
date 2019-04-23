@@ -47,7 +47,6 @@ export class RegisterService {
     .pipe(
       catchError(this.handleError('getHero', []))
     ));
-    
     return this.http.get<providerModel[]>(endpoint)
     .pipe(
       catchError(this.handleError('getHero', []))

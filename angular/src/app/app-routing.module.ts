@@ -7,17 +7,18 @@ import { RegisterProdKitchenComponent} from './register-prod-kitchen/register-pr
 import { ConsKitchensComponent } from './cons-kitchens/cons-kitchens.component';
 import { ConsKitchenViewComponent } from './cons-kitchen-view/cons-kitchen-view.component';
 import { FfSplashComponent } from './ff-splash/ff-splash.component';
+import { RegisterProdItemComponent } from './register-prod-item/register-prod-item.component';
 
 
 const routes: Routes = [
   { path: '', component: FfSplashComponent },
   { path: 'prov', component: RegisterProdComponent },
-  { path: 'cons', component: RegisterConsComponent },
-  { path: 'test', component: ProviderComponent },
   { path: 'prov2', component: RegisterProdKitchenComponent },  
+  { path: 'prov3', component: RegisterProdItemComponent }, 
+  { path: 'cons', component: RegisterConsComponent },
+  { path: 'test', component: ProviderComponent }, 
   { path: 'consk', component: ConsKitchensComponent },  
   { path: 'consk2', component: ConsKitchenViewComponent },  
-
 ];
 
 @NgModule({

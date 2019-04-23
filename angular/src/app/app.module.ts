@@ -5,10 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProviderComponent } from './provider/provider.component';
-import { ConsumerComponent } from './consumer/consumer.component';
 import { RegisterComponent } from './register/register.component';
-import { DisplayUserDataComponent } from './display-user-data/display-user-data.component';
-import { InputUserDataFormComponent } from './input-user-data-form/input-user-data-form.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterProdComponent } from './register-prod/register-prod.component';
@@ -20,6 +17,7 @@ import { ConsKitchenViewComponent } from './cons-kitchen-view/cons-kitchen-view.
 import { FileSelectDirective } from 'ng2-file-upload';
 import { AngularWebStorageModule } from 'angular-web-storage';
 import { FfSplashComponent } from './ff-splash/ff-splash.component';
+import { RegisterProdItemComponent } from './register-prod-item/register-prod-item.component';
 
 // const routes: Routes = [
 //   {
@@ -35,10 +33,7 @@ import { FfSplashComponent } from './ff-splash/ff-splash.component';
   declarations: [
     AppComponent,
     ProviderComponent,
-    ConsumerComponent,
     RegisterComponent,
-    DisplayUserDataComponent,
-    InputUserDataFormComponent,
     RegisterProdComponent,
     RegisterConsComponent,
     RegisterProdKitchenComponent,
@@ -46,6 +41,7 @@ import { FfSplashComponent } from './ff-splash/ff-splash.component';
     ConsKitchenViewComponent,
     FfSplashComponent,
     FileSelectDirective,
+    RegisterProdItemComponent,
   ],
   imports: [
     BrowserModule,

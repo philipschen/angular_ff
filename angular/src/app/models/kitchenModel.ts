@@ -10,8 +10,8 @@ export class kitchenModel {
     };
     starttime: String;
     endtime: String;
-    item: {"itemname": String,
+    item: [{"itemname": String,
         "veg": Boolean,
         "price": String,
-    };
+    }];
   }
