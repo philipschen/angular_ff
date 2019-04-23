@@ -3,6 +3,10 @@ var Schema = mongoose.Schema;
 
 //Create Schema
 var registerSchema = new Schema({
+    name: {
+        type: String,
+        required: false
+    },
     workingdays: {
         "monday": {
             type: Boolean,

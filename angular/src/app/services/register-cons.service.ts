@@ -42,7 +42,7 @@ export class RegisterConsService {
 }
 
 const endpoint = 'http://localhost:5000/users/register_cons'
-const endpoint_kit = 'http://localhost:5000/kitchen'
+const endpoint_kit = 'http://localhost:5000/api/kitchen'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'

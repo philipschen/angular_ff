@@ -5,6 +5,7 @@ import { RegisterConsComponent } from './register-cons/register-cons.component';
 import { ProviderComponent} from './provider/provider.component';
 import { RegisterProdKitchenComponent} from './register-prod-kitchen/register-prod-kitchen.component';
 import { ConsKitchensComponent } from './cons-kitchens/cons-kitchens.component';
+import { ConsKitchenViewComponent } from './cons-kitchen-view/cons-kitchen-view.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'test', component: ProviderComponent },
   { path: 'prov2', component: RegisterProdKitchenComponent },  
   { path: 'consk', component: ConsKitchensComponent },  
-
+  { path: 'consk2', component: ConsKitchenViewComponent },  
 
 ];
 

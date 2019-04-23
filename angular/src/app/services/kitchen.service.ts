@@ -41,7 +41,7 @@ export class KitchenService {
 }
 
 const endpoint = 'http://localhost:5000/users/register_pro'
-const endpoint_kit = 'http://localhost:5000/kitchen'
+const endpoint_kit = 'http://localhost:5000/api/kitchen'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'

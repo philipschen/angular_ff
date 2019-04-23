@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LocalStorageService, SessionStorageService } from 'angular-web-storage';
 
 import { RegisterService } from '../services/register.service';
 import { providerModel } from '../models/providerModel';
@@ -13,7 +14,7 @@ import { providerModel } from '../models/providerModel';
 })
 export class RegisterProdComponent implements OnInit {
 
-  constructor(private registerservice: RegisterService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private registerservice: RegisterService, private formBuilder: FormBuilder, private router: Router, public session: SessionStorageService) { }
   
   registered = false;
   submitted = false;

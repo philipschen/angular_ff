@@ -15,6 +15,9 @@ import { RegisterProdComponent } from './register-prod/register-prod.component';
 import { RegisterConsComponent } from './register-cons/register-cons.component';
 import { RegisterProdKitchenComponent } from './register-prod-kitchen/register-prod-kitchen.component';
 import { ConsKitchensComponent } from './cons-kitchens/cons-kitchens.component';
+import { ConsKitchenViewComponent } from './cons-kitchen-view/cons-kitchen-view.component';
+
+import { AngularWebStorageModule } from 'angular-web-storage';
 
 // const routes: Routes = [
 //   {
@@ -38,12 +41,14 @@ import { ConsKitchensComponent } from './cons-kitchens/cons-kitchens.component';
     RegisterConsComponent,
     RegisterProdKitchenComponent,
     ConsKitchensComponent,
+    ConsKitchenViewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     // add reactiveFormsModule into imports
     ReactiveFormsModule,
+    AngularWebStorageModule,
     // RouterModele
     // RouterModule.forRoot(routes),
     HttpClientModule,
