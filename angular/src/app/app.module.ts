@@ -18,6 +18,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
 import { AngularWebStorageModule } from 'angular-web-storage';
 import { FfSplashComponent } from './ff-splash/ff-splash.component';
 import { RegisterProdItemComponent } from './register-prod-item/register-prod-item.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 // const routes: Routes = [
 //   {
@@ -42,6 +43,7 @@ import { RegisterProdItemComponent } from './register-prod-item/register-prod-it
     FfSplashComponent,
     FileSelectDirective,
     RegisterProdItemComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,

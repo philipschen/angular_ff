@@ -1,0 +1,17 @@
+<h1>Shopping Cart</h1>
+
+<button type="submit" class="btn btn-primary" (click)="setEvent2()">Go back to Kitchens</button>
+<br>
+<br>
+<table style="border: 1px solid black;">
+  <tr>
+    <td> Item </td>
+    <td> Price </td>
+  </tr>
+  <tr *ngFor="let item of cart">
+    <td> {{item.itemname}} </td>
+    <td> {{item.price}} </td>
+  </tr>
+</table>
+<br>
+<button type="submit" class="btn btn-primary" (click)="setEvent()">Clear Cart</button>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { KitchenService } from '../services/kitchen.service';
 import { providerModel } from '../models/providerModel';
 import { kitchenModel } from '../models/kitchenModel';
-import { LocalStorageService, SessionStorageService } from 'angular-web-storage';
+import { SessionStorageService } from 'angular-web-storage';
 
 @Component({
   selector: 'app-cons-kitchen-view',
@@ -24,7 +24,13 @@ export class ConsKitchenViewComponent implements OnInit {
 
   setEvent(item: any) {
     // this.kitchens = this.kitchens.filter(h => h == kitchen);
-    // this.session.set("kitchen",this.kitchens);
+    var x = this.session.get("cart");
+    if (x == null){
+      x = []
+    }
+    console.log(item.itemname)
+    x.push({itemname: item.itemname, price: item.price })
+    this.session.set("cart", x);
     // console.log(this.kitchens)
     // this.router.navigate(['/consk2'])
   }

@@ -1,8 +1,10 @@
 <h1>{{kitchen.name}}</h1>
+<a routerLink="/cart" routerLinkActive="active">Cart</a>
+
 <ul>
   <li *ngFor="let item of kitchen.item">
     <a>
-      <button type="submit" class="btn btn-primary" (click)="setEvent(item)">{{item.itemname}}</button>
+      <button type="submit" class="btn btn-primary" (click)="setEvent(item)">{{item.itemname}} Price:{{item.price}}</button>
     </a>
   </li>
 </ul>

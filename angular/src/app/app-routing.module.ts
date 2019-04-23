@@ -8,6 +8,7 @@ import { ConsKitchensComponent } from './cons-kitchens/cons-kitchens.component';
 import { ConsKitchenViewComponent } from './cons-kitchen-view/cons-kitchen-view.component';
 import { FfSplashComponent } from './ff-splash/ff-splash.component';
 import { RegisterProdItemComponent } from './register-prod-item/register-prod-item.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,8 @@ const routes: Routes = [
   { path: 'test', component: ProviderComponent }, 
   { path: 'consk', component: ConsKitchensComponent },  
   { path: 'consk2', component: ConsKitchenViewComponent },  
+  { path: 'cart', component: ShoppingCartComponent },  
+  
 ];
 
 @NgModule({

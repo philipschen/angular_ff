@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SessionStorageService } from 'angular-web-storage';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { RegisterService } from '../services/register.service';
 import { kitchenModel } from '../models/kitchenModel';
-
 
 @Component({
   selector: 'app-register-prod-item',
@@ -69,6 +67,7 @@ export class RegisterProdItemComponent implements OnInit {
         item: this.userForm.get('items').value
       }
       this.registerservice.addprovider_kit(x).subscribe(val => {console.log(val)
+        this.session.clear()
         this.router.navigate(['/'])})
       this.registered = true;
     }
