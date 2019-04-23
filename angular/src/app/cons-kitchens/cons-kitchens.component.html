@@ -1,8 +1,7 @@
 <ul>
   <li *ngFor="let kitchen of kitchens">
     <a>
-      <button type="submit" class="btn btn-primary" (click)="setEvent(kitchen)">{{kitchen.starttime}}</button>
-      <span>{{kitchen.starttime}}</span> {{kitchen.endtime}}
+      <button type="submit" class="btn btn-primary" (click)="setEvent(kitchen)">{{kitchen.name}}</button>
     </a>
   </li>
 </ul>

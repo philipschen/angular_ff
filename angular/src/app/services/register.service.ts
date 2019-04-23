@@ -16,17 +16,7 @@ export class RegisterService {
     const body = res;
     return body || {};
   }
-  /*
-  // getProducts(): Observable<any> {
-  //   return this.http.get(endpoint + 'products').pipe(
-  //     map(this.extractData));
-  // }
 
-  // getProduct(id): Observable<any> {
-  //   return this.http.get(endpoint + 'products/' + id).pipe(
-  //     map(this.extractData));
-  // }
-*/
   addprovider(provider): Observable<any> {
     console.log(provider);
     console.log(this.http.post<providerModel>(endpoint, JSON.stringify(provider), httpOptions)
@@ -76,6 +66,16 @@ export class RegisterService {
   //     tap(_ => console.log(`deleted product id=${id}`)),
   //     catchError(this.handleError<any>('deleteProduct'))
   //   );
+  // }
+
+  // getProducts(): Observable<any> {
+  //   return this.http.get(endpoint + 'products').pipe(
+  //     map(this.extractData));
+  // }
+
+  // getProduct(id): Observable<any> {
+  //   return this.http.get(endpoint + 'products/' + id).pipe(
+  //     map(this.extractData));
   // }
   */
   private handleError<T>(operation = 'operation', result?: T) {

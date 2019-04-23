@@ -12,21 +12,20 @@ import { Router } from '@angular/router';
 })
 export class ConsKitchensComponent implements OnInit {
   kitchens: kitchenModel[]
+  
+
 
   constructor(private kitchenservice: KitchenService, public session: SessionStorageService, private router: Router) { }
 
   ngOnInit() {
     var temp = this.kitchenservice.getprovider().subscribe(val => {console.log(val); 
       this.kitchens = val;
-      this.session.set("kitchens",{"value": this.kitchens});
-      console.log(this.session.get("val1"))
     });
   }
 
   setEvent(kitchen: kitchenModel) {
     this.kitchens = this.kitchens.filter(h => h == kitchen);
-    this.session.set("kitchen",{"value": this.kitchens});
-    console.log(this.kitchens)
+    this.session.set("kitchen",this.kitchens);
     this.router.navigate(['/consk2'])
   }
 

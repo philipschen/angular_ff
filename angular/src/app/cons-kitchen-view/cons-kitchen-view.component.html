@@ -1,3 +1,8 @@
-<p>
-  cons-kitchen-view works!
-</p>
+<h1>{{kitchen.name}}</h1>
+<ul>
+  <li *ngFor="let item of kitchen.item">
+    <a>
+      <button type="submit" class="btn btn-primary" (click)="setEvent(item)">{{item.itemname}}</button>
+    </a>
+  </li>
+</ul>

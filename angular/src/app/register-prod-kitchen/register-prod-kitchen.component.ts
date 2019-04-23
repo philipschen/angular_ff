@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SessionStorageService } from 'angular-web-storage';
 
 import { RegisterService } from '../services/register.service';
 import { kitchenModel } from '../models/kitchenModel';
@@ -12,7 +13,7 @@ import { kitchenModel } from '../models/kitchenModel';
 })
 export class RegisterProdKitchenComponent implements OnInit {
 
-  constructor(private registerservice: RegisterService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private registerservice: RegisterService, private formBuilder: FormBuilder, private router: Router, public session: SessionStorageService) { }
 
   registered = false;
   submitted = false;
@@ -40,6 +41,7 @@ export class RegisterProdKitchenComponent implements OnInit {
       starttime: [''],
       endtime: [''],
     });
+    console.log(this.session.get("prod_name"))
   }
 
   onSubmit() {
@@ -53,6 +55,7 @@ export class RegisterProdKitchenComponent implements OnInit {
       console.log(this.endtime)
           // HTTP request
       var x: kitchenModel = {
+        name: this.session.get("prod_name"),
         workingdays: {"monday": this.Monday, 
           "tuesday": this.Tuesday,
           "wednesday": this.Wednesday,
@@ -68,12 +71,9 @@ export class RegisterProdKitchenComponent implements OnInit {
           "price": "2",
         }
       }
-
       this.registerservice.addprovider_kit(x).subscribe(val => {console.log(val)
         this.router.navigate(['/'])})
       this.registered = true;
-      
-      
     }
   }
 

@@ -18,7 +18,6 @@ export class RegisterConsService {
   }
 
   addCons(cons): Observable<any> {
-    console.log(cons);
     console.log(this.http.post<consModel>(endpoint, JSON.stringify(cons), httpOptions)
     .pipe(
       catchError(this.handleError('addHero', cons))

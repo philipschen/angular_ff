@@ -6,10 +6,11 @@ import { ProviderComponent} from './provider/provider.component';
 import { RegisterProdKitchenComponent} from './register-prod-kitchen/register-prod-kitchen.component';
 import { ConsKitchensComponent } from './cons-kitchens/cons-kitchens.component';
 import { ConsKitchenViewComponent } from './cons-kitchen-view/cons-kitchen-view.component';
+import { FfSplashComponent } from './ff-splash/ff-splash.component';
 
 
 const routes: Routes = [
-  { path: '', component: RegisterProdComponent },
+  { path: '', component: FfSplashComponent },
   { path: 'prov', component: RegisterProdComponent },
   { path: 'cons', component: RegisterConsComponent },
   { path: 'test', component: ProviderComponent },

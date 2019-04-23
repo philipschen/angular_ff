@@ -46,7 +46,7 @@ var registerSchema = new Schema({
         required: true
     },
     img: { data: Buffer, contentType: String },
-    item: {
+    item: [{
         "itemname": {
             type: String,
             required: true
@@ -59,7 +59,7 @@ var registerSchema = new Schema({
             type: String,
             required: true
         }
-    },
+    }],
     provider_id: {
         type: String
     }

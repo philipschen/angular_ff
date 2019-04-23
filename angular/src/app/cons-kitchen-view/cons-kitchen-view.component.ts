@@ -10,11 +10,23 @@ import { LocalStorageService, SessionStorageService } from 'angular-web-storage'
   styleUrls: ['./cons-kitchen-view.component.css']
 })
 export class ConsKitchenViewComponent implements OnInit {
-  kitchens: kitchenModel[]
-
+  kitchen: kitchenModel
+  item: [{"itemname": String,
+        "veg": Boolean,
+        "price": String,
+    }]
   constructor(private kitchenservice: KitchenService, public session: SessionStorageService) { }
 
   ngOnInit() {
+    this.kitchen = this.session.get("kitchen")[0]
+    console.log(this.kitchen)
+  }
+
+  setEvent(item: any) {
+    // this.kitchens = this.kitchens.filter(h => h == kitchen);
+    // this.session.set("kitchen",this.kitchens);
+    // console.log(this.kitchens)
+    // this.router.navigate(['/consk2'])
   }
 
 }

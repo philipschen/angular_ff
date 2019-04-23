@@ -1,4 +1,5 @@
 export class kitchenModel {
+    name: String;
     workingdays: {"monday": Boolean, 
         "tuesday": Boolean,
         "wednesday": Boolean,

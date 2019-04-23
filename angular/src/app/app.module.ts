@@ -17,7 +17,9 @@ import { RegisterProdKitchenComponent } from './register-prod-kitchen/register-p
 import { ConsKitchensComponent } from './cons-kitchens/cons-kitchens.component';
 import { ConsKitchenViewComponent } from './cons-kitchen-view/cons-kitchen-view.component';
 
+import { FileSelectDirective } from 'ng2-file-upload';
 import { AngularWebStorageModule } from 'angular-web-storage';
+import { FfSplashComponent } from './ff-splash/ff-splash.component';
 
 // const routes: Routes = [
 //   {
@@ -42,6 +44,8 @@ import { AngularWebStorageModule } from 'angular-web-storage';
     RegisterProdKitchenComponent,
     ConsKitchensComponent,
     ConsKitchenViewComponent,
+    FfSplashComponent,
+    FileSelectDirective,
   ],
   imports: [
     BrowserModule,

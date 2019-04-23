@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LocalStorageService, SessionStorageService } from 'angular-web-storage';
+import { SessionStorageService } from 'angular-web-storage';
 
 import { RegisterService } from '../services/register.service';
 import { providerModel } from '../models/providerModel';
@@ -48,6 +48,7 @@ export class RegisterProdComponent implements OnInit {
         password: this.password,
         reenter_password: this.confirm_password,
       }
+      this.session.set("prod_name",this.service_provider_name);
       this.registerservice.addprovider(x).subscribe(val => {console.log(val)
         this.router.navigate(['/prov2'])})
       

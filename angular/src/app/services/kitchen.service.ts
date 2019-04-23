@@ -16,12 +16,7 @@ export class KitchenService {
     return body || {};
   }
 
-  getprovider(): Observable<any[]> {
-    console.log(this.http.get<kitchenModel[]>(endpoint_kit)
-    .pipe(
-      catchError(this.handleError('getHero', []))
-    ));
-    
+  getprovider(): Observable<any[]> {    
     return this.http.get<kitchenModel[]>(endpoint_kit)
     .pipe(
       catchError(this.handleError('getHero', []))
